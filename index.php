@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 	$content = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
 		
 	$blobClient->createBlockBlob($containerName, $fileToUpload, $content);
-	header("Location: eugen.php");
+	header("Location: index.php");
 }	
 	
 $listBlobsOptions = new ListBlobsOptions();
@@ -33,7 +33,7 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 	<body>
 
 			<div>silahkan upload gambar:</div>
-					<form action="eugen.php" method="post" enctype="multipart/form-data">
+					<form action="index.php" method="post" enctype="multipart/form-data">
 						<input type="file" name="fileToUpload" accept=".jpeg,.jpg,.png" required="">
 						<div></div>
 						<div></div>
